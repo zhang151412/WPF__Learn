@@ -63,18 +63,21 @@ namespace WpfApp
             });
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        //Button click events are one of the few method signatures where async void is acceptable. 
+        private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var item = listBox1.SelectedItem as StudentViewModel;
-            if (item is null) { return; }
+            if (item is null) { return ; }
             Student stu = _studentRepository.FirstOrDefault(s => s.Id == item.Id);
 
             if (stu != null)
             {
-                _studentRepository.Delete(stu);
-                _mainViewModel.StudentViewModels.Remove(item);
+               var del= await _studentRepository.DeleteAsync(stu);
+                if (del)
+                {
+                    _mainViewModel.StudentViewModels.Remove(item);
+                }
             }
-
         }
 
     }
