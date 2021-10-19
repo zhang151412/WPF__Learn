@@ -1,0 +1,13 @@
+/node_modules
+bin/
+obj/
+.vs/
+SenparcTraceLog/
+*.[pdb]
+*.suo
+*.user
+*.pdb
+*.tmp
+publish/
+coveragereport/
+
