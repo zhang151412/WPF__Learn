@@ -52,6 +52,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <Menu x:Name="MainMenu" ItemsSource="{Binding MainMenuItem}" Margin="0,400,0,0"/>
     </Grid>
 
 

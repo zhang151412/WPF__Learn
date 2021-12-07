@@ -29,6 +29,15 @@ namespace WpfApp.ViewModel
 
         private StudentRepository _studentRepository;
 
+        public ObservableCollection<string> MainMenuItem
+        {
+            get
+            {
+                return new ObservableCollection<string>()
+                {"123","456" };
+            }
+        }
+
         public ObservableCollection<StudentViewModel> StudentViewModels { get; set; }
     }
 }
